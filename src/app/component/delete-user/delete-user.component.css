@@ -1,0 +1,40 @@
+mat-divider {
+  position: relative !important;
+}
+
+.label-delete-user {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 10px 0 10px;
+}
+
+.btn-group {
+  display: grid;
+  grid-template-columns: 65% 15% 15% 5%;
+  grid-gap: 10px;
+  padding-bottom: 15px;
+}
+
+.dialog-content {
+  font-size: 18px;
+}
+
+p {
+  padding: 10px;
+}
+
+.btn-edit {
+  border: 1px solid #00a99d;
+  border-radius: 22px;
+  padding: 0px 35px;
+}
+
+.btn-no {
+  background-color: white !important;
+  color: #00a99d;
+}
+
+.btn-yes {
+  background-color: #00a99d;
+  color: white;
+}

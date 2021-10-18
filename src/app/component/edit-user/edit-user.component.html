@@ -1,0 +1,74 @@
+<mat-card>
+  <mat-card-title>Edit User</mat-card-title><br />
+  <mat-divider></mat-divider><br />
+
+  <form [formGroup]="userForm">
+    <!-- Full Name -->
+    <mat-form-field appearance="outline" carot-color="#00a99d">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter full name"
+        formControlName="name"
+      /> </mat-form-field
+    ><br />
+
+    <!-- Email -->
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your email</mat-label>
+      <input
+        matInput
+        placeholder="Enter email"
+        formControlName="email"
+      /> </mat-form-field
+    ><br />
+
+    <!-- Gender -->
+    <mat-radio-group aria-label="Select an option" formControlName="gender">
+      <label class="label-gender">Gender</label>
+      <mat-radio-button value="Male">Male</mat-radio-button>
+      <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
+    <br /><br />
+
+    <!-- Date of birth -->
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        [matDatepicker]="picker"
+        placeholder="Date Of Birth"
+        formControlName="dob"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br />
+
+    <!-- Address -->
+    <mat-form-field class="" appearance="outline">
+      <mat-label>Address</mat-label>
+      <textarea
+        matInput
+        placeholder="Enter your address"
+        formControlName="address"
+      ></textarea>
+    </mat-form-field>
+    <br />
+
+    <!-- Submit button -->
+    <div class="submit-btn-section">
+      <div></div>
+      <div>
+        <button
+          mat-flat-button
+          [disabled]="userForm.status === 'INVALID'"
+          class="submit-btn"
+          color="primary"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</mat-card>

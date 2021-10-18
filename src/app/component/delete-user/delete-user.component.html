@@ -1,0 +1,19 @@
+<h1 mat-dialog-title class="label-delete-user">Delete User</h1>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content class="dialog-content">
+  <p>Are you sure you want to delete {{ username }}?</p>
+</div>
+
+<div mat-dialog-actions class="btn-group">
+  <div></div>
+  <div>
+    <button mat-button (click)="onNoClick()" class="btn-edit btn-no">No</button>
+  </div>
+  <div>
+    <button mat-button (click)="onYesClick()" class="btn-edit btn-yes">
+      Yes
+    </button>
+  </div>
+  <div></div>
+</div>

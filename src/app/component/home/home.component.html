@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+
+<div class="landing-page">
+  <!-- Main Body User Details Section -->
+  <div class="main-body">
+    <mat-card class="user-list">
+      <mat-card-title>
+        <span>USER LIST</span>
+      </mat-card-title>
+      <br />
+      <mat-divider></mat-divider>
+      <br />
+      <div class="mat-elevation-z1">
+        <table mat-table [dataSource]="dataSource" width="100%">
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+          </ng-container>
+
+          <!-- Gender Column -->
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef>Gender</th>
+            <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
+          </ng-container>
+
+          <!-- Address Column -->
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef>Address</th>
+            <td mat-cell *matCellDef="let element">{{ element.address }}</td>
+          </ng-container>
+
+          <!-- Date Of Birth Column -->
+          <ng-container matColumnDef="dob">
+            <th mat-header-cell *matHeaderCellDef>Date of Birth</th>
+            <td mat-cell *matCellDef="let element">{{ element.dob }}</td>
+          </ng-container>
+
+          <!-- Edit/Delete Buttons -->
+          <ng-container matColumnDef="edit"
+            ><th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element; index as i">
+              <span>
+                <button mat-button (click)="editUser(i)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </span>
+              <span>
+                <button mat-button (click)="deleteUser(i)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </span>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 20]"
+          showFirstLastButtons
+          aria-label="Select page of periodic elements"
+        >
+        </mat-paginator>
+      </div>
+    </mat-card>
+  </div>
+  <!-- Progress Card Section -->
+  <div class="progress-card">
+    <mat-card class="progress-section">
+      <mat-card-title>
+        <span>PROGRESS</span>
+      </mat-card-title>
+      <br />
+      <mat-divider class="divider"></mat-divider>
+      <br />
+      <mat-progress-bar mode="determinate" [value]="value"></mat-progress-bar>
+      <mat-card-content>
+        <br />
+        <div [ngStyle]="{ padding: '10px' }">
+          <span class="progress-card-details">Male Users: </span>
+          <span class="progress-card-details">{{ totalMaleUsers }}</span>
+        </div>
+        <br />
+        <div [ngStyle]="{ padding: '10px' }">
+          <span class="progress-card-details">Female Users: </span>
+          <span class="progress-card-details">{{ totalFemaleUsers }}</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

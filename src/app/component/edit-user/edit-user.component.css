@@ -1,0 +1,78 @@
+mat-card {
+  padding: 2rem;
+}
+
+mat-card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.label-gender {
+  margin-right: 15px;
+}
+
+mat-radio-button {
+  margin-right: 15px;
+}
+
+.submit-btn {
+  background-color: #00a99d !important;
+}
+
+.submit-btn-section {
+  display: grid;
+  padding-top: 10px;
+  grid-template-columns: 80% 20%;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: #00a99d !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black !important;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: #00a99d !important;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+  .mat-form-field-outline-thick {
+  color: #00a99d !important;
+  opacity: 0.8 !important;
+}
+
+::ng-deep .mat-input-element {
+  caret-color: #00a99d !important;
+}
+
+::ng-deep .mat-form-field-invalid .mat-input-element,
+.mat-warn .mat-input-element {
+  caret-color: #00a99d !important;
+}
+
+::ng-deep .mat-form-field-label {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #00a99d !important;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: red !important;
+}
+
+mat-divider {
+  position: relative !important;
+}
